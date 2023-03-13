@@ -1,7 +1,7 @@
 programa {
   funcao inicio() {
     inteiro n1 , valor
-    escreva("qual é o valor que vc deseja ter promoção? ")
+    escreva("qual Ã© o valor que vc deseja ter promoÃ§Ã£o? ")
     leia (n1) 
     valor=n1/100
     escreva(valor*5)
