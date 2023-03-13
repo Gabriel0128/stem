@@ -2,7 +2,7 @@ programa {
   funcao inicio() {
     cadeia nome
     inteiro n1, resultado
-    escreva("qual é seu nome? ")
+    escreva("qual Ã© seu nome? ")
     leia (nome)
     escreva ("quanto voce recebe por mes? ")
     leia (n1) 
