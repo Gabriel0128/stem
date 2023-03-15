@@ -1,53 +1,65 @@
 programa {
   inclua biblioteca Matematica
   funcao inicio() {
-    inteiro opcao1, opcao2, dia, dia2, dia3, ano, quantidade
+    inteiro op1, op2, d, dias, ano, qt, qt2, qt3
+    //(d - dia), (dias - total de dias, (qt - quantidade), (op - opção)
     real tempo
 
-    escreva("voce fuma? ")
-    leia(opcao1)
+    escreva("voce fuma? \n(1-sim)\n(2-Não)\n--> ")
+    leia(op1)
+    limpa()
 
-    escolha (opcao1)
+    escolha (op1)
     {
       caso 1:
-        escreva("vc fuma a mais de 1 ano? ")
-        leia(opcao2)
+        escreva("vc fuma a mais de 1 ano? \n(1-sim)\n(2-Não)\n--> ")
+        leia(op2)
+        limpa()
 
-        escolha (opcao2)
+        escolha (op2)
         {
           caso 1:
-            escreva("vc fuma a quantos anos? ")
+            escreva("vc fuma a quantos anos? \n--> ")
             leia (ano)
-            escreva("e a quantos dias? ")
-            leia (dia)
-            escreva("quantos por dia + ou - ? ")
-            leia (quantidade)
+            limpa()
+            escreva(ano, " anos ","e quantos dias? \n--> ")
+            leia (d)
+            limpa()
+            escreva("quantos por dia + ou - ? \n--> ")
+            leia (qt)
             limpa()
 
-            dia2=ano*365
-            dia3=dia+dia2
-            quantidade=dia3*10
-            tempo=(quantidade/60)/24
+            
+            dias= d+(ano*365)  //conversão de ano pra dias
+            qt2= qt*dias       //total de cigarros
+            qt3= qt2*10        //total de minutos
+            tempo= (qt3/60)/24 //total de dias
 
-            escreva("\nvoce perdeu ",Matematica.arredondar(tempo,3), " dias de sua vida \nvoce fumou ", quantidade, " cigarros\n")
+            escreva("\nvoce perdeu ",Matematica.arredondar(tempo,1), " dias de sua vida! \nvoce fumou ", qt2, " cigarros.\n")
 
             pare
           caso 2:
-            escreva("vc fuma a quantos dias? ")
-            leia(dia)
-            escreva("quantos por dia + ou - ? ")
-            leia(quantidade)
+            escreva("vc fuma a quantos dias? \n--> ")
+            leia(d)
+            limpa()
+            escreva("quantos por dia + ou - ? \n--> ")
+            leia(qt)
             limpa()
 
-            quantidade=dia*10
-            tempo=(quantidade/60)/24
+            qt2=qt*d          //quantidade de cigarros
+            qt3=qt2*10        //total de minutos
+            tempo=(qt3/60)/24 //total de dias
 
-            escreva("\nvoce perdeu ",Matematica.arredondar(tempo,3), " dias de sua vida \nvoce fumou ", quantidade, " cigarros\n")
-
+            escreva("\nvoce perdeu ",Matematica.arredondar(tempo,1), " dias de sua vida! \nvoce fumou ", qt2, " cigarros.\n")
+        caso contrario:
+        escreva("invalido, tente novamente. \n")
         }
         pare;
       caso 2:
-        escreva("parab�ns, voce tem um pulm�o quase livre de cancer!! ")
+        escreva("parabéns, voce tem um pulmão quase livre de cancer!! \n")
+        pare
+      caso contrario:
+      escreva("invalido, tente novamente. \n")
     }
   }
 }
